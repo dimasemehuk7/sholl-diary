@@ -1,0 +1,17 @@
+.edit-ball {
+    background: red;
+    padding: 1em;
+    display: inline-block; 
+
+    .balls {
+        background: white;
+
+        .check-ball {
+            display: inline-block;
+            padding: 0.5em;
+            margin: 0.5em;
+            background: yellowgreen;
+            border-radius: 0.4em; 
+        }
+    }
+}

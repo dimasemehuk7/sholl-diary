@@ -1,0 +1,20 @@
+<div class="table-wrapper">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">№</th>
+        <th scope="col">Прізвище,Ім'я</th>
+        <th *ngFor="let day of page.days" scope="col">{{day}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of page.students">
+        <th scope="row">{{student.number}}</th>
+        <td>{{student.name}}</td>
+        <td *ngFor="let ball of student.balls" (click)="edit()">{{ball}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<app-edit-ball></app-edit-ball>
