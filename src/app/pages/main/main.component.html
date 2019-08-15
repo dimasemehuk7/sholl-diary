@@ -1,20 +1,43 @@
+<!-- пагинация -->
+<br/>
+<ul class="pagination">
+  <li class="page-item " [ngClass]="month == st.chosen ? 'active':''" (click)="st.chosen = month"
+    *ngFor="let month of [9,10,11,12,1,2,3,4,5]"
+    (click)="checkMonth(month)"
+    >
+    <a class="page-link" href="#">{{month}}</a>
+  </li>
+</ul>
+<select class="form-control" (change)="onChangeSelect($event)">
+    <option 
+    *ngFor="let kind of ['Математика','English']" 
+    [value]="kind"
+    [selected]="kind==st.class.selected_lesson"
+    >{{kind}}</option>
+</select>
+
+
 <div class="table-wrapper">
   <table class="table">
     <thead>
       <tr>
         <th scope="col">№</th>
         <th scope="col">Прізвище,Ім'я</th>
-        <th *ngFor="let day of page.days" scope="col">{{day}}</th>
+        <th *ngFor="let day of st.page.days" scope="col">{{day}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of page.students">
+      <tr *ngFor="let student of st.page.oneMonth">
         <th scope="row">{{student.number}}</th>
         <td>{{student.name}}</td>
-        <td *ngFor="let ball of student.balls" (click)="edit()">{{ball}}</td>
+        <td class="cel" [title]="record.coment" *ngFor="let record of student.records" (click)="edit(record)">
+          <b>{{record.ball}}</b>
+          <br>
+          {{record.type}}
+        </td>
       </tr>
 
     </tbody>
   </table>
 </div>
-<app-edit-ball></app-edit-ball>
+<app-edit-ball [st]="st.editBall"></app-edit-ball>

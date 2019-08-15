@@ -8,6 +8,18 @@ table {
 }
 
 td:hover {
-    background: rgb(231, 222, 222);
+  background: rgb(231, 222, 222);
+}
+.cel {
+  position: relative;
+}
+.cel:hover:after {
+content:'QQQQ';
+position: absolute;
+bottom: -2em;
+left:0px;
+background: gray;
+padding:.5em;
+color: black;
 }
 

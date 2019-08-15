@@ -12,6 +12,12 @@
             margin: 0.5em;
             background: yellowgreen;
             border-radius: 0.4em; 
+            &:hover{
+                background: white;
+            }
+        }
+        .checked{
+            background: white
         }
     }
 }
