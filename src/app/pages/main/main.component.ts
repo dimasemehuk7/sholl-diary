@@ -21,6 +21,7 @@ export class MainComponent implements OnInit {
     nav: {},
     editBall: {
       show: false,
+      i:0,
       info: { ball: 0, type: '', coment: '' },
     },
     chosen: 9,
@@ -52,8 +53,9 @@ export class MainComponent implements OnInit {
 
   }
 
-  edit(record) {
+  edit(record,i) {
     this.st.editBall.info = record;
+    this.st.editBall.i=i;
     this.st.editBall.show = true;
   }
 

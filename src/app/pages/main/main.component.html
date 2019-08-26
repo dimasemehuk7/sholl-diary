@@ -30,8 +30,9 @@
       <tr *ngFor="let student of st.page.oneMonth">
         <th scope="row">{{student.number}}</th>
         <td>{{student.name}}</td>
-        <td class="cel" [title]="record.coment" *ngFor="let record of student.records" (click)="edit(record)">
+        <td class="cel" [title]="record.coment" *ngFor="let record of student.records;let i = index" [attr.data-index]="i" (click)="edit(record,i)">
           <b>{{record.ball}}</b>
+          {{i}}
           <br>
           {{record.type}}
         </td>
